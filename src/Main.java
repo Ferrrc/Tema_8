@@ -1,47 +1,39 @@
 public class Main {
     public static void main(String[] args) {
-        Persona persona1 = new Persona();
-        persona1.setEdad(14);
-        persona1.setNombre("Juan");
-        persona1.setTelefono(978723285);
+        Cliente cliente = new Cliente();
+        cliente.edad = 30;
+        cliente.nombre = "Juan";
+        cliente.telefono = 976298815;
+        cliente.credito = 800;
+        System.out.println("Mi nombre es " + cliente.nombre);
+        System.out.println("Tengo " + cliente.edad + " años");
+        System.out.println("Mi numero es " + cliente.telefono);
+        System.out.println("Tengo un credito de " + cliente.credito + " soles");
 
-        System.out.println("Te llamas " + persona1.getNombre());
-        System.out.println("Tienes " + persona1.getEdad());
-        System.out.println("Tu numero es " + persona1.getTelefono());
+
+        Trabajador trabajador = new Trabajador();
+        trabajador.edad = 40;
+        trabajador.nombre = "Pedro";
+        trabajador.telefono = 997822516;
+        trabajador.salario =  3500;
+        System.out.println("Mi nombre es " + trabajador.nombre);
+        System.out.println("Tengo " + trabajador.edad + " años");
+        System.out.println("Mi numero es " + trabajador.telefono);
+        System.out.println("Tengo un salario de " + trabajador.salario + " soles");
 
     }
 }
 
 class Persona{
-    private int edad;
+    int edad;
+   String nombre;
+   int telefono;
+}
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
+class Cliente extends Persona {
+    int credito;
+}
 
-    public int getEdad() {
-        return this.edad;
-    }
-
-
-    private String nombre;
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-
-    private int telefono;
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    public int getTelefono() {
-        return this.telefono;
-    }
+class Trabajador extends Persona {
+    int salario;
 }
